@@ -6,3 +6,34 @@
 3. Get an LED klipper config from command ref or Voron SB repo
 4. Use `pin: PB0` with `color_order: GRBW`
 
+
+## Connection
+* Black = GND
+* Red = 5v
+* Yellow = Data
+
+![bltouch port wiring](bltouchconnect.jpg)
+
+
+## Example klipper config
+
+```
+[neopixel sb_leds]
+pin: PB0
+#   The pin connected to the neopixel. This parameter must be provided.
+chain_count: 3
+#   The number of Neopixel chips that are "daisy chained" to the
+#   provided pin. The default is 1 (which indicates only a single
+#   Neopixel is connected to the pin).
+color_order: GRBW
+#   Set the pixel order required by the LED hardware. Options are GRB,
+#   RGB, GRBW, or RGBW. The default is GRB.
+initial_RED: 1.0
+initial_GREEN: 0.0
+initial_BLUE: 1.0
+initial_WHITE: 0.0
+#   Sets the initial LED color of the Neopixel. Each value should be
+#   between 0.0 and 1.0. The WHITE option is only available on RGBW
+#   LEDs. The default for each color is 0.#
+
+```
