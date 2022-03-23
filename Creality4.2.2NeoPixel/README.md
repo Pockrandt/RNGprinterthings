@@ -1,10 +1,22 @@
 # How to control Neopixel on Stock Ender 3v2 MCU
 
+## Warning
+
+If you are connecting the PI via USB with the MCU then put tape on the 5V Pin (1), see below.
+Reason is a design flaw that allowed the MCU to draw power from the PI.
+
+
+## How To
 
 1. solder not more than a few neopixels in a daisy chain according to the label
 2. crimp a 5 port  JST-XHP that goes into the BLtouch port, see picture (GND to GND, 5V to 5V [red], Data to PWM [yellow])
 3. Get an LED klipper config from command ref or Voron SB repo
 4. Use `pin: PB0` with `color_order: GRBW`
+
+
+
+
+
 
 
 ## Connection
@@ -37,3 +49,8 @@ initial_WHITE: 0.0
 #   LEDs. The default for each color is 0.#
 
 ```
+
+
+## Backpower fix
+
+![usb backpower fix](USBPower.png)
